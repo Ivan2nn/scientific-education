@@ -44,7 +44,12 @@
 		</header>
 		<!-- end header -->
 		<section id="featured">
-		 
+		@if(Auth::guest())
+            <a href="{{ url('/login')}}" class="homepage-links">Log In</a>
+            <a href="{{ url('/register')}}" class="homepage-links homepage-links-second">Registrati</a>
+        @else
+            <a href="{{ url('/logout')}}">Log Out</a>
+        @endif
 		<!-- Slider -->
 	        <div id="main-slider" class="flexslider">
 	            <ul class="slides">
