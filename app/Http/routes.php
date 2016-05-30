@@ -22,3 +22,4 @@ Route::get('/valid-mails', 'ValidMailController@index');
 Route::post('/valid-mails', 'ValidMailController@store');
 
 Route::resource('/material','MaterialController');
+Route::resource('/story', 'StoryController');

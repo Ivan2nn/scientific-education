@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests\CreateMaterialRequest;
-use App\Material;
+use App\Http\Requests\CreateStoryRequest;
+use App\Story;
 
-class MaterialController extends Controller
+class StoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        return view('basic.material');
+        return view('basic.story');
     }
 
     /**
@@ -26,7 +26,7 @@ class MaterialController extends Controller
      */
     public function create()
     {
-        return view('admin_panel.creatematerial');
+        return view('admin_panel.createstory');
     }
 
     /**
@@ -35,19 +35,13 @@ class MaterialController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateMaterialRequest $request)
-    {	
-    	$input = $request->all();
-        $document = $input['file'];
-        $destinationPath = 'documents/'. $input['published_at'] .'/';
-        $filename = $document->getClientOriginalName();
-        $uploadSuccess = $document->move($destinationPath, $filename);
-        $input['file'] = $destinationPath . $filename; 
+    public function store(CreateStoryRequest $request)
+    {
+        $input = $request->all();
         $input['user_id'] = $request->user()->id;     
-        
-        Material::create($input);
+        Story::create($input);
 
-        return redirect('material');
+        return redirect('story');
     }
 
     /**

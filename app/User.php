@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Material;
+use App\Story;
 
 class User extends Authenticatable
 {
@@ -28,5 +29,10 @@ class User extends Authenticatable
     public function materials()
     {
         return $this->hasMany('Material');
+    }
+
+    public function stories()
+    {
+        return $this->hasMany('Story');
     }
 }
