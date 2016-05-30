@@ -7,7 +7,7 @@
 <meta name="description" content="" />
 <meta name="mimi eDesign" content="http://mimiedesign.com" />
 <!-- css -->
-<link href="output/final.css" rel="stylesheet" />
+<link href="{!! asset('output/final.css') !!}" media="all" rel="stylesheet" type="text/css" />
  
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>

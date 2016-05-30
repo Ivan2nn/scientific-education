@@ -20,3 +20,5 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 Route::get('/valid-mails', 'ValidMailController@index');
 Route::post('/valid-mails', 'ValidMailController@store');
+
+Route::resource('/material','MaterialController');
