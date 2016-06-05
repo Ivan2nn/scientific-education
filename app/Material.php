@@ -14,8 +14,13 @@ class Material extends Model
 	public function setPublishedAtAttribute($date) 
 	{
 		// So we can add the time, not just he php date
-		$this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
+		$this->attributes['published_at'] = Carbon::createFromFormat('d-m-Y', $date);
 	}
+
+    public function getPublishedAtAttribute()
+    {
+        return date('d-m-Y', strtotime($this->attributes['published_at']));
+    }
 
     public function user()
     {

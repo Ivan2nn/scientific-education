@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class CreateMaterialRequest extends Request
+class MaterialRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,7 @@ class CreateMaterialRequest extends Request
         return [
             'title' => 'required | min:4',
             'file'  => 'required | mimes:jpeg,jpg,bmp,png,gif,doc,pdf,ppt,zip',
-            'published_at'  => 'required'
+            'published_at'  => 'required|date'
         ];
     }
 }

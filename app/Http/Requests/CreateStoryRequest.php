@@ -26,7 +26,7 @@ class CreateStoryRequest extends Request
         return [
             'title' => 'required | min:4',
             'body'  => 'required | min: 10',
-            'published_at'  => 'required'
+            'published_at'  => 'required|date'
         ];
     }
 }

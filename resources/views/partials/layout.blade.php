@@ -54,21 +54,21 @@
 	        <div id="main-slider" class="flexslider">
 	            <ul class="slides">
 	              <li>
-	                <img src="img/slides/1.jpg" alt="" />
+	                {!! Html::image('img/slides/1.jpg','Image slide 0') !!}
 	                <div class="flex-caption">
 	                    <h3>Awesome Design</h3> 
 						<p>Doloribus omnis minus temporibus perferendis ipsa architecto non, magni quam</p>  
 	                </div>
 	              </li>
 	              <li>
-	                <img src="img/slides/2.jpg" alt="" />
+	                {!! Html::image('img/slides/2.jpg','Image slide 2') !!}
 	                <div class="flex-caption">
 	                    <h3>Fully Responsive</h3> 
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elitincidunt eius magni provident.</p> 
 	                </div>
 	              </li>
 	              <li>
-	                <img src="img/slides/3.jpg" alt="" />
+	                {!! Html::image('img/slides/3.jpg','Image slide 3') !!}
 	                <div class="flex-caption">
 	                    <h3>Multi-purpose Theme</h3> 
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit donec mer lacinia.</p>  
