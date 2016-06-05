@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMaterialsTable extends Migration
+class CreateMaterials extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +15,12 @@ class CreateMaterialsTable extends Migration
         Schema::create('materials', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->string('file');
-            $table->timestamp('published_at');
+            $table->string('filename');
+            $table->text('description')->nullable();
             $table->timestamps();
+            $table->timestamp('published_at');
         });
     }
 

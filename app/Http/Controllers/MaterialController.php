@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests\CreateMaterialRequest;
+use App\Http\Requests\MaterialRequest;
 use App\Material;
 
 class MaterialController extends Controller
@@ -16,7 +16,8 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        return view('basic.material');
+        $materials = Material::all();
+        return view('basic.materials', compact('materials'));
     }
 
     /**
@@ -35,18 +36,21 @@ class MaterialController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateMaterialRequest $request)
+    public function store(MaterialRequest $request)
     {	
     	$input = $request->all();
         $document = $input['file'];
         $destinationPath = 'documents/'. $input['published_at'] .'/';
-        $filename = $document->getClientOriginalName();
-        $uploadSuccess = $document->move($destinationPath, $filename);
-        $input['file'] = $destinationPath . $filename; 
-        $input['user_id'] = $request->user()->id;     
-        
-        Material::create($input);
+        $nameFile = $document->getClientOriginalName();
+        $uploadSuccess = $document->move($destinationPath, $nameFile);
+        $input['file'] = $destinationPath . $nameFile; 
 
+        $newMaterial = Material::create($input);
+
+        // since we can't make mass assignment::
+        $newMaterial->filename = $nameFile;
+        $newMaterial->user_id = $request->user()->id; 
+        $newMaterial->save();
         return redirect('material');
     }
 
@@ -56,9 +60,9 @@ class MaterialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($material)
     {
-        //
+        return view('basic.material', compact('material'));
     }
 
     /**
@@ -67,9 +71,9 @@ class MaterialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($material)
     {
-        //
+        return view('admin_panel.editmaterial', compact('material'));
     }
 
     /**
@@ -79,9 +83,9 @@ class MaterialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $material)
     {
-        //
+        dd($material);
     }
 
     /**
@@ -90,7 +94,7 @@ class MaterialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($material)
     {
         //
     }
