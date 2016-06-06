@@ -83,9 +83,30 @@ class MaterialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $material)
+    public function update(MaterialRequest $request, $material)
     {
-        dd($material);
+        $input = $request->all();
+
+        if (!isset($input['file']))
+        {
+           $input['file'] = $material->file;
+           $nameFile = $material->filename;
+        }       
+        
+        else
+        {
+            $document = $input['file'];
+            $destinationPath = 'documents/'. $input['published_at'] .'/';
+            $nameFile = $document->getClientOriginalName();
+            $uploadSuccess = $document->move($destinationPath, $nameFile);
+            $input['file'] = $destinationPath . $nameFile;   
+        }
+        
+        $material->update($input);
+        $material->filename = $nameFile;
+        $material->update();
+        return redirect('material');
+        
     }
 
     /**

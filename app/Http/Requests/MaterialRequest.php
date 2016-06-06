@@ -23,10 +23,27 @@ class MaterialRequest extends Request
      */
     public function rules()
     {
-        return [
-            'title' => 'required | min:4',
-            'file'  => 'required | mimes:jpeg,jpg,bmp,png,gif,doc,pdf,ppt,zip',
-            'published_at'  => 'required|date'
-        ];
+        switch($this->method())
+        {
+            case 'GET':
+            case 'DELETE':
+            case 'POST':
+            {   
+                return [
+                    'title' => 'required | min:4',
+                    'file'  => 'required | mimes:jpeg,jpg,bmp,png,gif,doc,pdf,ppt,zip',
+                    'published_at'  => 'required|date'
+                ];
+            }
+            case 'PUT':
+            case 'PATCH':
+            {
+                return [
+                    'title' => 'required | min:4',
+                    'published_at'  => 'required|date'
+                ];
+            }
+            default: break;
+        }
     }
 }
