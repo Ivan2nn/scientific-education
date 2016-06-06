@@ -29,6 +29,7 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot($router);
 
         $router->model('material', 'App\Material');
+        $router->model('story', 'App\Story');
     }
 
     /**
@@ -40,7 +41,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map(Router $router)
     {
         $this->mapWebRoutes($router);
-
+        
         //
     }
 

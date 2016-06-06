@@ -11,7 +11,7 @@
 </div>
 @if ($editMaterial)
     <div class="form-group">
-        {!! Form::label('file_material','Nome del file presente',array('class' => 'control-label col-sm-2')) !!}
+        {!! Form::label('file_material','Materiale presente',array('class' => 'control-label col-sm-2')) !!}
         <div class="col-sm-5">
             {!! Form::label('file_material',$material->filename,array('class' => 'form-control')) !!}
         </div>
