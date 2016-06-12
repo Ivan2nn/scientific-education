@@ -27,12 +27,12 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies($gate);
 
-        foreach($this->getPermissions() as $permission) {
+        /*foreach($this->getPermissions() as $permission) {
             $gate->define($permission->name, function($user) use ($permission) {
                 // let's check if the user has any role assoicated with that permission
                 return $user->hasRole($permission->roles);
             });
-        }
+        }*/
     }
 
     public function getPermissions() 

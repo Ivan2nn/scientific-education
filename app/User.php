@@ -24,8 +24,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function roles() {
-        return $this->belongsToMany(Role::class);
+    public function role() {
+        return $this->belongsTo(Role::class);
     }
 
     // User hasRole('manager')
