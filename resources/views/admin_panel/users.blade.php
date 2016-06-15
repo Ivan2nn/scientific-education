@@ -10,8 +10,9 @@
     		<div class="list-user-element">{!! $user->name !!}</div>
     		<div class="list-user-email">{!! $user->email !!}</div>
     		<div class="col-sm-5">
+    		{!! $roles !!}
     			   {!! $user->role->label !!}
-        		{!! Form::select('roles', $roles, 2, ['class' => 'form-control']) !!}
+        		{!! Form::select('roles', $roles, $user->role->label, ['class' => 'form-control']); !!}
     		</div>
 		</div>
 	@endforeach
