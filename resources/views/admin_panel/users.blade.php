@@ -3,16 +3,14 @@
 @section('content')
 
 <h1>Users</h1>
-   {!!Form::open(['url' => ['admin/users/edit'], 'class' => 'form-horizontal', 'method' => 'PATCH']) !!}
+   {!!Form::open(['url' => ['admin/users/edit'], 'class' => 'form-horizontal', 'method' => 'POST']) !!}
 
 	@foreach($users as $user)
     	<div class="form-group">
     		<div class="list-user-element">{!! $user->name !!}</div>
     		<div class="list-user-email">{!! $user->email !!}</div>
     		<div class="col-sm-5">
-    		{!! $roles !!}
-    			   {!! $user->role->label !!}
-        		{!! Form::select('roles', $roles, $user->role->label, ['class' => 'form-control']); !!}
+        		{!! Form::select('users[' . $user->id . '].role', $roles, $user->role->label, ['class' => 'form-control']); !!}
     		</div>
 		</div>
 	@endforeach

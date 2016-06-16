@@ -10,10 +10,23 @@ use App\Role;
 
 class AdminController extends Controller
 {
+
     public function showRegisteredUsers()
     {
     	$users = User::with('role')->get();
     	$roles = Role::lists('label','label');
     	return view('admin_panel.users', compact('users', 'roles'));
+    }
+
+    public function editRegisteredUsersRoles(Request $request)
+    {
+    	foreach ($request->users as $user_id => $role) {
+       		$user = User::findOrFail($user_id);
+       		$user->role_id = Role::where('label',$role)->get()->first()->id;
+       		$user->update();
+    	}
+
+    	$users = User::with('role')->get();
+    	$roles = Role::lists('label','label');
     }
 }
