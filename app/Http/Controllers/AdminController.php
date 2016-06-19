@@ -26,7 +26,7 @@ class AdminController extends Controller
        		$user->update();
     	}
 
-    	$users = User::with('role')->get();
-    	$roles = Role::lists('label','label');
+    	$parameters = ['users' => User::with('role')->get(), 'roles' => Role::lists('label','label')];
+    	return redirect('/admin/users')->with($parameters);
     }
 }

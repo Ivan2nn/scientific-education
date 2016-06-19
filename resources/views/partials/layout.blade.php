@@ -19,7 +19,7 @@
 	<div id="wrapper">
 		<!-- start header -->
 		<header>
-	        <div class="navbar navbar-default navbar-static-top">
+	        <div class="navbar navbar-red navbar-default navbar-static-top">
 	            <div class="container">
 	                <div class="navbar-header">
 	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,12 +31,18 @@
 	                </div>
 	                <div class="navbar-collapse collapse ">
 	                    <ul class="nav navbar-nav">
-	                        <li class="active"><a href="index.html">Home</a></li> 
+	                        <li class="active">{!! link_to_route('home', $title = 'Home', $parameters = array(), $attributes = array()); !!}</li> 
 							<li><a href="about.html">About Us</a></li>
 							<li><a href="services.html">Services</a></li>
 	                        <li><a href="portfolio.html">Portfolio</a></li>
-	                        <li><a href="pricing.html">Pricing</a></li>
 	                        <li><a href="contact.html">Contact</a></li>
+	                        <li>
+	                        	@if(Auth::guest())
+            						{!! link_to('login', $title = 'Log in', $parameters = array(), $attributes = array()); !!}
+        						@else
+            						{!! link_to('logout', $title = 'Log out', $parameters = array(), $attributes = array()); !!}
+        						@endif
+	                        </li>
 	                    </ul>
 	                </div>
 	            </div>
@@ -44,12 +50,6 @@
 		</header>
 		<!-- end header -->
 		<section id="featured">
-		@if(Auth::guest())
-            <a href="{{ url('/login')}}" class="homepage-links">Log In</a>
-            <a href="{{ url('/register')}}" class="homepage-links homepage-links-second">Registrati</a>
-        @else
-            <a href="{{ url('/logout')}}">Log Out</a>
-        @endif
 		<!-- Slider -->
 	        <div id="main-slider" class="flexslider">
 	            <ul class="slides">

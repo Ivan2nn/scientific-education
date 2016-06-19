@@ -12,14 +12,15 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.less('app.less');
 
     mix.styles([
 
 		'vendor/bootstrap.min.css',
 		'vendor/fancybox/jquery.fancybox.css',
 		'vendor/flexslider.css',
-		'vendor/style.css'
+		'vendor/style.css',
+        'app.css'
 
     ], 'public/output/final.css', 'public/css');
 

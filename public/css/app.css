@@ -1,2 +1,28 @@
+header .navbar-red {
+  background-color: #F4645F;
+}
+#featured {
+  background-color: white;
+}
+footer {
+  background: white;
+}
+footer {
+  color: #F4645F;
+}
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6 {
+  color: #F4645F;
+}
+footer ul.link-list li a {
+  color: #F4645F;
+}
+#sub-footer {
+  background-color: #F4645F;
+}
 
 /*# sourceMappingURL=app.css.map */

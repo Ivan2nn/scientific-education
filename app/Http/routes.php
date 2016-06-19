@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('basic.main');
-});
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
 Route::get('/valid-mails', 'ValidMailController@index');
 Route::post('/valid-mails', 'ValidMailController@store');
 
