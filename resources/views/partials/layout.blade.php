@@ -77,6 +77,7 @@
 	            </ul>
 	        </div>
 		<!-- end slider -->
+		</section>
 	 	@yield('content')
 		
 		<footer>

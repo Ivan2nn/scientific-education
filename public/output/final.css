@@ -4144,44 +4144,6 @@ padding-top: 12px;
  
 
 
-body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    color: #888;
-    line-height: 30px;
-    text-align: center;
-}
-
-strong { font-weight: 500; }
-
-a, a:hover, a:focus {
-	color: #19b9e7;
-	text-decoration: none;
-    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
-}
-
-h1, h2 {
-	margin-top: 10px;
-	font-size: 38px;
-    font-weight: 100;
-    color: #555;
-    line-height: 50px;
-}
-
-h3 {
-	font-size: 22px;
-    font-weight: 300;
-    color: #555;
-    line-height: 30px;
-}
-
-img { max-width: 100%; }
-
-::-moz-selection { background: #19b9e7; color: #fff; text-shadow: none; }
-::selection { background: #19b9e7; color: #fff; text-shadow: none; }
-
-
 .btn-link-1 {
 	display: inline-block;
 	height: 50px;
@@ -4373,10 +4335,6 @@ footer a:hover, footer a:focus { color: #fff; border-bottom: 1px dotted #fff; }
 
 @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
-body {
-	padding: 60px 0px;
-	background-color: rgb(220, 220, 220);
-}
 
 .event-list {
 	list-style: none;
@@ -4408,13 +4366,13 @@ body {
 }
 .event-list > li > time > .day {
 	display: block;
-	font-size: 56pt;
+	font-size: 46pt;
 	font-weight: 100;
 	line-height: 1;
 }
 .event-list > li time > .month {
 	display: block;
-	font-size: 24pt;
+	font-size: 20pt;
 	font-weight: 900;
 	line-height: 1;
 }
@@ -4426,12 +4384,12 @@ body {
 	text-align: center;
 }
 .event-list > li > .info > .title {
-	font-size: 17pt;
+	font-size: 15pt;
 	font-weight: 700;
 	margin: 0px;
 }
 .event-list > li > .info > .desc {
-	font-size: 13pt;
+	font-size: 12pt;
 	font-weight: 300;
 	margin: 0px;
 }
@@ -4504,7 +4462,7 @@ body {
 		position: relative;
 		display: block;
 		width: 100%;
-		height: 120px;
+		height: 100px;
 		padding: 0px;
 	}
 	.event-list > li > time,
@@ -4513,7 +4471,7 @@ body {
 	}
 	.event-list > li > time,
 	.event-list > li > img {
-		width: 120px;
+		width: 100px;
 		float: left;
 	}
 	.event-list > li > .info {
@@ -4522,14 +4480,14 @@ body {
 	}
 	.event-list > li > time,
 	.event-list > li > img {
-		width: 120px;
-		height: 120px;
+		width: 100px;
+		height: 100px;
 		padding: 0px;
 		margin: 0px;
 	}
 	.event-list > li > .info {
 		position: relative;
-		height: 120px;
+		height: 100px;
 		text-align: left;
 		padding-right: 40px;
 	}	
@@ -4568,6 +4526,9 @@ body {
 /* Main Secondary color (1) */
 /* Main Secondary color (2) */
 /* Main Complement color */
+body {
+  padding: 0px;
+}
 header .navbar-red {
   background-color: #F4665F;
 }
@@ -4596,6 +4557,9 @@ footer ul.link-list li a {
 }
 .form-bottom .form-login-forget {
   margin-top: 10px;
+}
+.event-list li time {
+  background-color: #F4A55F;
 }
 
 /*# sourceMappingURL=app.css.map */

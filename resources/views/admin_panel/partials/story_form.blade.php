@@ -5,6 +5,10 @@
     </div>
 </div>
 <div class="form-group">
+    {!! Form::label('story_date', 'Data Evento:') !!}
+    {!! Form::input('event_date', 'story_date',  $editStory ? null : date('d-m-Y'), ['class' => 'form-control']) !!}
+</div>
+<div class="form-group">
     {!! Form::label('published_at', 'Da pubblicare:') !!}
     {!! Form::input('date', 'published_at',  $editStory ? null : date('d-m-Y'), ['class' => 'form-control']) !!}
 </div>

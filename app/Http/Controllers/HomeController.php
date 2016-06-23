@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
+use App\Story;
+
 class HomeController extends Controller
 {
     /**
@@ -27,7 +29,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('basic.main');
+        $events = Story::all();
+        return view('basic.main', compact('events'));
     }
 
     public function donate() {

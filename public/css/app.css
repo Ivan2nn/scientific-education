@@ -4,6 +4,9 @@
 /* Main Secondary color (1) */
 /* Main Secondary color (2) */
 /* Main Complement color */
+body {
+  padding: 0px;
+}
 header .navbar-red {
   background-color: #F4665F;
 }
@@ -32,6 +35,9 @@ footer ul.link-list li a {
 }
 .form-bottom .form-login-forget {
   margin-top: 10px;
+}
+.event-list li time {
+  background-color: #F4A55F;
 }
 
 /*# sourceMappingURL=app.css.map */

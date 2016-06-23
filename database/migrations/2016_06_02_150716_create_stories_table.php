@@ -19,6 +19,7 @@ class CreateStoriesTable extends Migration
             $table->text('excerpt')->nullable();
             $table->text('body');
             $table->timestamps();
+            $table->timestamp('story_date');
             $table->timestamp('published_at');
         });
     }
