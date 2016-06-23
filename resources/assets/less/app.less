@@ -1,8 +1,35 @@
-@base-color: #F4645F;
+
+/* MIXINS */
+
+/* As hex codes */
+
+@color-primary-0: #F4665F;	/* Main Primary color */
+@color-primary-1: #FFB6B2;
+@color-primary-2: #FF8D87;
+@color-primary-3: #D9413A;
+@color-primary-4: #B3231B;
+
+@color-secondary-1-0: #F4A55F;	/* Main Secondary color (1) */
+@color-secondary-1-1: #FFD6B2;
+@color-secondary-1-2: #FFC087;
+@color-secondary-1-3: #D9853A;
+@color-secondary-1-4: #B3621B;
+
+@color-secondary-2-0: #3B8D94;	/* Main Secondary color (2) */
+@color-secondary-2-1: #96D0D5;
+@color-secondary-2-2: #60ACB3;
+@color-secondary-2-3: #247C84;
+@color-secondary-2-4: #12656D;
+
+@color-complement-0: #4ABD58;	/* Main Complement color */
+@color-complement-1: #A1E7AA;
+@color-complement-2: #70D37C;
+@color-complement-3: #2DA83C;
+@color-complement-4: #158A23;
 
 header {
 	.navbar-red {
-		background-color: @base-color;
+		background-color: @color-primary-0;
 	}
 }
 
@@ -15,19 +42,25 @@ footer {
 }
 
 footer {
-	color: @base-color;
+	color: @color-primary-0;
 	h1, h2, h3, h4, h5, h6 {
-		color: @base-color;
+		color: @color-primary-0;
 	}
 	ul.link-list {
 		li {
 			a {
-				color: @base-color;
+				color: @color-primary-0;
 			}
 		}
 	}
 }
 
 #sub-footer {
-	background-color: @base-color;
+	background-color: @color-primary-0;
+}
+
+.form-bottom {
+	.form-login-forget {
+		margin-top: 10px;
+	}
 }

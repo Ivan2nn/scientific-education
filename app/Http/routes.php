@@ -18,6 +18,7 @@ Route::auth();
 Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
 Route::get('/valid-mails', 'ValidMailController@index');
 Route::post('/valid-mails', 'ValidMailController@store');
+Route::get('/donate', 'HomeController@donate');
 
 Route::get('/admin/users', 'AdminController@showRegisteredUsers');
 Route::post('admin/users/edit', 'AdminController@editRegisteredUsersRoles');
