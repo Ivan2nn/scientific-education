@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 
 use App\Story;
+use App\SiteEvent;
 
 class HomeController extends Controller
 {
@@ -18,7 +19,8 @@ class HomeController extends Controller
     {
         $this->middleware('auth', ['except' => [
             'index',
-            'donate'
+            'donate',
+            'contacts'
         ]]);
     }
 
@@ -29,11 +31,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $events = Story::all();
-        return view('basic.main', compact('events'));
+        $siteEvents = SiteEvent::all();
+        return view('basic.main', compact('siteEvents'));
     }
 
-    public function donate() {
+    public function donate()
+    {
         return view('basic.donate');
+    }
+
+    public function contacts()
+    {
+        return view('basic.contacts');
     }
 }

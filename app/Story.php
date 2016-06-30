@@ -10,6 +10,7 @@ class Story extends Model
 {
     protected $fillable = array('title','body','published_at','story_date');
 
+    protected $dates = ['story_date'];
     // We have to follow the convention set+NameOfAttributeCamelCase
 	public function setPublishedAtAttribute($date) 
     {
@@ -27,9 +28,11 @@ class Story extends Model
         return date('d-m-Y', strtotime($this->attributes['published_at']));
     }
 
-    public function getStoryDateAttribute()
+    public function getExcerptAttribute()
     {
-        return date('d-m-Y', strtotime($this->attributes['story_date']));
+        if ($this->attribute['excerpt'] == null) {
+            return substr($this->attributes['body'],0,14) . '...';
+        }
     }
 
     public function user()

@@ -21,6 +21,17 @@ class MaterialController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function adminIndex()
+    {
+        $materials = Material::all();
+        return view('admin_panel.materials', compact('materials'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -49,7 +60,8 @@ class MaterialController extends Controller
 
         // since we can't make mass assignment::
         $newMaterial->filename = $nameFile;
-        $newMaterial->user_id = $request->user()->id; 
+        $newMaterial->filetype = $document->getClientOriginalExtension();
+        $newMaterial->user_id = $request->user()->id;
         $newMaterial->save();
         return redirect('material');
     }
@@ -103,6 +115,7 @@ class MaterialController extends Controller
         }
         
         $material->update($input);
+        $newMaterial->filetype = $document->getClientOriginalExtension();
         $material->filename = $nameFile;
         $material->update();
         return redirect('material');
@@ -118,5 +131,10 @@ class MaterialController extends Controller
     public function destroy($material)
     {
         //
+    }
+
+    public function getDownload($material) {
+        $filePath = 'public/' . $material->$file;
+        return Response::download($filePath);
     }
 }

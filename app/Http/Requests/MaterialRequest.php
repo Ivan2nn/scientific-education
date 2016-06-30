@@ -31,7 +31,7 @@ class MaterialRequest extends Request
             {   
                 return [
                     'title' => 'required | min:4',
-                    'file'  => 'required | mimes:jpeg,jpg,bmp,png,gif,doc,pdf,ppt,zip',
+                    'file'  => 'required | mimes:jpeg,jpg,bmp,png,gif,doc,pdf,ppt,zip,wav,mp3,mpg,avi',
                     'published_at'  => 'required|date'
                 ];
             }

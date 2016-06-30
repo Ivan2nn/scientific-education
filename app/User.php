@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Material;
 use App\Story;
+use App\SiteEvent;
 
 class User extends Authenticatable
 {
@@ -45,8 +46,39 @@ class User extends Authenticatable
         return $this->hasMany('Material');
     }
 
+    public function events()
+    {
+        return $this->hasMany('SiteEvent');
+    }
+
     public function stories()
     {
         return $this->hasMany('Story');
+    }
+
+    public function isAdmin()
+    {
+        foreach ($this->role()->get() as $role)
+        {
+            if ($role->name == 'administrator')
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function isBasic()
+    {
+        foreach ($this->role()->get() as $role)
+        {
+            if ($role->name == 'basic')
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

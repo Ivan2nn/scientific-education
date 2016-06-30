@@ -16,10 +16,8 @@ class CreateStoriesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->integer('user_id')->unsigned();
-            $table->text('excerpt')->nullable();
             $table->text('body');
             $table->timestamps();
-            $table->timestamp('story_date');
             $table->timestamp('published_at');
         });
     }

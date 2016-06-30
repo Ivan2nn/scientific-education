@@ -8,8 +8,9 @@ use Carbon\Carbon;
 
 class Material extends Model
 {
-    protected $fillable = array('title','file','published_at');
+    protected $fillable = array('title','file','published_at','description');
 
+    protected $dates = ['published_at'];
     // We have to follow the convention set+NameOfAttributeCamelCase
 	public function setPublishedAtAttribute($date) 
 	{
@@ -17,10 +18,11 @@ class Material extends Model
 		$this->attributes['published_at'] = Carbon::createFromFormat('d-m-Y', $date);
 	}
 
+    /*
     public function getPublishedAtAttribute()
     {
         return date('d-m-Y', strtotime($this->attributes['published_at']));
-    }
+    }*/
 
     public function user()
     {

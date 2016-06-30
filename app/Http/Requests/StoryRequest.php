@@ -25,7 +25,6 @@ class StoryRequest extends Request
     {
         return [
             'title' => 'required | min:4',
-            'body'  => 'required | min: 10',
             'published_at'  => 'required|date'
         ];
     }

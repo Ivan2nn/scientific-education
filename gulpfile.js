@@ -21,9 +21,11 @@ elixir(function(mix) {
 		'vendor/flexslider.css',
         'vendor/font-awesome/css/font-awesome.css',
         'vendor/form-elements.css',
-		'vendor/style.css',
         'vendor/style_form_login.css',
         'vendor/cards.css',
+        'vendor/datepicker.css',
+        'vendor/bootcards-desktop.min.css',
+        'vendor/style.css',
         'app.css'
 
     ], 'public/output/final.css', 'public/css');
@@ -38,6 +40,7 @@ elixir(function(mix) {
     	'vendor/portfolio/setting.js',
     	'vendor/jquery.flexslider.js',
     	'vendor/animate.js',
+        'vendor/bootstrap-datepicker.js',
     	'vendor/custom.js'
     ], 'public/output/final.js', 'public/js')
 });

@@ -19,7 +19,7 @@
 	<div id="wrapper">
 		<!-- start header -->
 		<header>
-	        <div class="navbar navbar-red navbar-default navbar-static-top">
+	        <div class="navbar navbar-default navbar-static-top">
 	            <div class="container">
 	                <div class="navbar-header">
 	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,20 +27,28 @@
 	                        <span class="icon-bar"></span>
 	                        <span class="icon-bar"></span>
 	                    </button>
-	                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a>
+	                    <a href={!! route('home') !!} class="navbar-brand"><img src="img/logo.png" alt="logo"/></a>
 	                </div>
 	                <div class="navbar-collapse collapse ">
 	                    <ul class="nav navbar-nav">
-	                        <li class="active">{!! link_to_route('home', $title = 'Home', $parameters = array(), $attributes = array()); !!}</li> 
-							<li><a href="about.html">About Us</a></li>
-							<li><a href="services.html">Services</a></li>
-	                        <li>{!! link_to('donate', $title = 'Donate', $parameters = array(), $attributes = array()); !!}</li>
-	                        <li><a href="contact.html">Contact</a></li>
+	                        <li class="active">{!! link_to_route('home', $title = 'HomePage', $parameters = array(), $attributes = array()); !!}</li> 
+							@if(!Auth::guest() && !Auth::user()->isBasic())
+								<li>
+									{!! link_to('material', $title = 'Documenti', $parameters = array(), $attributes = array()); !!}
+								</li>
+            				@endif
+	                        <li>{!! link_to('donate', $title = 'Donazioni', $parameters = array(), $attributes = array()); !!}</li>
+	                        <li>{!! link_to('contacts', $title = 'Contatti', $parameters = array(), $attributes = array()); !!}</li>
 	                        <li>
 	                        	@if(Auth::guest())
             						{!! link_to('login', $title = 'Log in', $parameters = array(), $attributes = array()); !!}
         						@else
             						{!! link_to('logout', $title = 'Log out', $parameters = array(), $attributes = array()); !!}
+        						@endif
+	                        </li>
+	                        <li>
+	                        	@if ( Auth::check() && Auth::user()->isAdmin())
+            						{!! link_to('admin', $title = 'Admin', $parameters = array(), $attributes = array()); !!}
         						@endif
 	                        </li>
 	                    </ul>
@@ -49,66 +57,36 @@
 	        </div>
 		</header>
 		<!-- end header -->
-		<section id="featured">
-		<!-- Slider -->
-	        <div id="main-slider" class="flexslider">
-	            <ul class="slides">
-	              <li>
-	                {!! Html::image('img/slides/1.jpg','Image slide 0') !!}
-	                <div class="flex-caption">
-	                    <h3>Awesome Design</h3> 
-						<p>Doloribus omnis minus temporibus perferendis ipsa architecto non, magni quam</p>  
-	                </div>
-	              </li>
-	              <li>
-	                {!! Html::image('img/slides/2.jpg','Image slide 2') !!}
-	                <div class="flex-caption">
-	                    <h3>Fully Responsive</h3> 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elitincidunt eius magni provident.</p> 
-	                </div>
-	              </li>
-	              <li>
-	                {!! Html::image('img/slides/3.jpg','Image slide 3') !!}
-	                <div class="flex-caption">
-	                    <h3>Multi-purpose Theme</h3> 
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit donec mer lacinia.</p>  
-	                </div>
-	              </li>
-	            </ul>
-	        </div>
-		<!-- end slider -->
-		</section>
+		
 	 	@yield('content')
 		
 		<footer>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3">
+				<div class="col-lg-6">
 					<div class="widget">
 						<h5 class="widgetheading">Our Contact</h5>
 						<address>
-						<strong>Target company Inc</strong><br>
-						JC Main Road, Near Silnile tower<br>
-						 Pin-21542 NewYork US.</address>
+						<strong>Scientific Foundation</strong><br>
+						 Via Vito Volterra, 62<br>
+						 00142 - Roma, Italy.</address>
 						<p>
 							<i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
 							<i class="icon-envelope-alt"></i> email@domainname.com
 						</p>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-lg-6">
 					<div class="widget">
-						<h5 class="widgetheading">Quick Links</h5>
+						<h5 class="widgetheading">Link Esterni</h5>
 						<ul class="link-list">
-							<li><a href="#">Latest Events</a></li>
-							<li><a href="#">Terms and conditions</a></li>
-							<li><a href="#">Privacy policy</a></li>
-							<li><a href="#">Career</a></li>
-							<li><a href="#">Contact us</a></li>
+							<li><a href="#">Sito 1</a></li>
+							<li><a href="#">Sito 2</a></li>
+							<li><a href="#">Sito 3</a></li>
 						</ul>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<!-- <div class="col-lg-3">
 					<div class="widget">
 						<h5 class="widgetheading">Latest posts</h5>
 						<ul class="link-list">
@@ -117,8 +95,8 @@
 							<li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
 						</ul>
 					</div>
-				</div>
-				<div class="col-lg-3">
+				</div> -->
+				<!-- <div class="col-lg-3">
 					<div class="widget">
 						<h5 class="widgetheading">Recent News</h5>
 						<ul class="link-list">
@@ -127,7 +105,7 @@
 							<li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
 						</ul>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div id="sub-footer">
@@ -158,6 +136,8 @@
 	<!-- javascript
 	    ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="output/final.js"></script>
+	<!-- Google Maps -->
+    
+	<script src="{!! asset('output/final.js') !!}"></script>
 </body>
 </html>

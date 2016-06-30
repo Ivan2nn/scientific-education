@@ -18,6 +18,7 @@ class CreateMaterials extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('file');
             $table->string('filename');
+            $table->string('filetype');
             $table->text('description')->nullable();
             $table->timestamps();
             $table->timestamp('published_at');
