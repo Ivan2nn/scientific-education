@@ -25,6 +25,7 @@ jQuery(document).ready(function($) {
 			$(this).find('p').removeClass("animated fadeInUp");
 			}
 		);
+
 		
 		
 		$('.accordion').on('show', function (e) {

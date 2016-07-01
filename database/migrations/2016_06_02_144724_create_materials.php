@@ -19,6 +19,7 @@ class CreateMaterials extends Migration
             $table->string('file');
             $table->string('filename');
             $table->string('filetype');
+            $table->integer('filesize');
             $table->text('description')->nullable();
             $table->timestamps();
             $table->timestamp('published_at');

@@ -61,6 +61,7 @@ class MaterialController extends Controller
         // since we can't make mass assignment::
         $newMaterial->filename = $nameFile;
         $newMaterial->filetype = $document->getClientOriginalExtension();
+        $newMaterial->filesize = $document->getSize();
         $newMaterial->user_id = $request->user()->id;
         $newMaterial->save();
         return redirect('material');
@@ -116,6 +117,7 @@ class MaterialController extends Controller
         
         $material->update($input);
         $newMaterial->filetype = $document->getClientOriginalExtension();
+        $newMaterial->filesize = $document->getSize();
         $material->filename = $nameFile;
         $material->update();
         return redirect('material');
@@ -134,7 +136,7 @@ class MaterialController extends Controller
     }
 
     public function getDownload($material) {
-        $filePath = 'public/' . $material->$file;
-        return Response::download($filePath);
+        $filePath = public_path() . '/' . $material->file;
+        return response()->download($filePath);
     }
 }

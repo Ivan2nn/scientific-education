@@ -28,4 +28,32 @@ class Material extends Model
     {
     	return $this->belongsTo('User');
     }
+
+    public function isMediaFile() {
+        if ($this->attributes['filetype'] == 'mp3' || 
+            $this->attributes['filetype'] == 'mpga' || 
+            $this->attributes['filetype'] == 'ogg') {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function isTextFile() {
+        if ($this->attributes['filetype'] == 'doc' || 
+            $this->attributes['filetype'] == 'docx' ||
+            $this->attributes['filetype'] == 'txt' ) {
+
+            return true;
+        }
+        return false;
+    }
+
+    public function isAcrobatFile() {
+        if ($this->attributes['filetype'] == 'pdf') {
+            return true;
+        }
+
+        return false;
+    }
 }

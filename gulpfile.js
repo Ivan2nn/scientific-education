@@ -19,7 +19,7 @@ elixir(function(mix) {
 		'vendor/bootstrap.min.css',
 		'vendor/fancybox/jquery.fancybox.css',
 		'vendor/flexslider.css',
-        'vendor/font-awesome/css/font-awesome.css',
+        'vendor/font-awesome-4.6.3/css/font-awesome.css',
         'vendor/form-elements.css',
         'vendor/style_form_login.css',
         'vendor/cards.css',

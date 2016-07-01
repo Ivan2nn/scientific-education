@@ -26,7 +26,7 @@ Route::post('admin/users/edit', 'AdminController@editRegisteredUsersRoles');
 Route::get('/admin', ['as' => 'admin', 'uses' => 'AdminController@index']);
 Route::get('/admin/materials', ['as' => 'admin.materials', 'uses' => 'MaterialController@adminIndex']);
 Route::get('/admin/site-events', ['as' => 'admin.site-events', 'uses' => 'SiteEventController@adminIndex']);
-Route::get('/fetch-material/$material', array('as' => 'fetch-material', 'uses' => 'MaterialController@getDownload'));
+Route::get('/fetch-material/{material}', array('as' => 'fetch-material', 'uses' => 'MaterialController@getDownload'));
 
 Route::resource('/material','MaterialController');
 Route::resource('/story', 'StoryController');

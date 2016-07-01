@@ -50,7 +50,7 @@
 			<p>Suspendisse ultrices, est non ultricies condimentum, diam tortor imperdiet magna, vitae rhoncus dolor risus sed magna. Aenean porttitor lectus efficitur mauris pharetra malesuada. Donec hendrerit risus turpis, nec tincidunt lectus dignissim non. Aliquam sit amet ipsum non ante posuere interdum. Donec porttitor tempus diam eu ornare. Nulla sit amet molestie urna. Mauris vitae magna vel justo interdum imperdiet et et enim. Donec turpis mi, porta nec ultrices sed, porttitor et quam. Duis non nunc ac est blandit tincidunt id sed orci. Morbi purus erat, porttitor non magna at, dignissim congue quam. Donec faucibus diam eget lacus volutpat pulvinar. Sed volutpat luctus velit a ultrices. In hac habitasse platea dictumst. Sed dictum tristique tincidunt. Sed lobortis condimentum sodales. </p>
 		</div>
 		<div class="col-md-5">
-			@if ($siteEvents)
+			@if (!$siteEvents->isEmpty())
 			<h2>Eventi</h2>
 			<ul class="event-list">
 				@foreach($siteEvents as $siteEvent)
