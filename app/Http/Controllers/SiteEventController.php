@@ -52,11 +52,12 @@ class SiteEventController extends Controller
     public function store(SiteEventRequest $request)
     {
         $input = $request->all();  
+
         $newStory = SiteEvent::create($input);
         $newStory->user_id = $request->user()->id;
         $newStory->save();
 
-        return redirect('/');
+        return redirect('admin');
     }
 
     /**
@@ -91,8 +92,8 @@ class SiteEventController extends Controller
     public function update(SiteEventRequest $request, $site_event)
     {
         $input = $request->all();
-        $story->update($input); 
-        return redirect('siteevent');
+        $site_event->update($input); 
+        return redirect('admin');
     }
 
     /**
@@ -103,6 +104,7 @@ class SiteEventController extends Controller
      */
     public function destroy($site_event)
     {
-        //
+        $site_event->delete();
+        return redirect('admin');
     }
 }

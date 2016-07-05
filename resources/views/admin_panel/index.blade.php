@@ -20,7 +20,8 @@
         <div class="admin-button-margin col-lg-7">
             <a href="{{ URL::route('admin.users') }}">
                 <button type="button" class="btn btn-default btn-lg admin-panel-btn">
-                    <span class="glyphicon glyphicon-user cf-green" aria-hidden="true"></span> Modifica utenti
+                    <i class="fa fa-users" aria-hidden="true"></i>
+ Modifica utenti
                 </button>
             </a>
         </div>
@@ -28,28 +29,32 @@
         <div class="admin-button-margin col-lg-7">
             <a href="{{ URL::route('material.create') }}">
                 <button type="button" class="btn btn-default btn-lg admin-panel-btn">
-                    <span class="glyphicon glyphicon-book cf-green" aria-hidden="true"></span> Inserisci nuova documentazione
+                    <i class="fa fa-book" aria-hidden="true"></i>
+ Inserisci nuova documentazione
                 </button>
             </a>
         </div>
         <div class="admin-button-margin col-lg-7">
             <a href="{{ URL::route('admin.materials') }}">
                 <button type="button" class="btn btn-default btn-lg admin-panel-btn">
-                    <span class="glyphicon glyphicon-wrench cf-green" aria-hidden="true"></span> Modifica documentazione
+                    <i class="fa fa-wrench" aria-hidden="true"></i><i class="fa fa-book" aria-hidden="true"></i>
+ Modifica documentazione
                 </button>
             </a>       
         </div>
         <div class="admin-button-margin col-lg-7">
             <a href="{{ URL::route('site-event.create') }}">
                 <button type="button" class="btn btn-default btn-lg admin-panel-btn">
-                    <span class="glyphicon glyphicon-calendar cf-green" aria-hidden="true"></span> Inserisci nuovo evento
+                    <i class="fa fa-calendar-o" aria-hidden="true"></i>
+ Inserisci nuovo evento
                 </button>
             </a>       
         </div>
         <div class="admin-button-margin col-lg-7">
             <a href="{{ URL::route('admin.site-events') }}">
                 <button type="button" class="btn btn-default btn-lg admin-panel-btn">
-                    <span class="glyphicon glyphicon-wrench cf-green" aria-hidden="true"></span> Modifica un evento
+                    <i class="fa fa-wrench" aria-hidden="true"></i><i class="fa fa-calendar-o" aria-hidden="true"></i>
+ Modifica un evento
                 </button>
             </a>       
         </div>

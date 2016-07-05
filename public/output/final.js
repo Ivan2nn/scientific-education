@@ -2481,8 +2481,9 @@ jQuery(document).ready(function($) {
 
 	
 		//add some elements with animate effect
-		$('#story_date').datepicker();
-		$('#published_at').datepicker();
+		$('#story_date').datepicker({ format: 'dd-mm-yyyy' });
+		$('#event_date').datepicker({ format: 'dd-mm-yyyy' });
+		$('#published_at').datepicker({ format: 'dd-mm-yyyy' });
 
 		$(".big-cta").hover(
 			function () {
@@ -2613,9 +2614,10 @@ jQuery(document).ready(function($) {
         sync                : "",                //{NEW} Selector: Mirror the actions performed on this slider with another slider. Use with care.
         asNavFor            : "",                //{NEW} Selector: Internal property exposed for turning the slider into a thumbnail navigation for another slider
     });
-	
-	if( $( '.map' ).length ) {	
-		$( '.map' ).each( function( i, e ) {
+
+	if( $( '.new-map' ).length ) {	
+		
+		$( '.new-map' ).each( function( i, e ) {
 			var $gmap = $( e );
 			var $gmap_title = $gmap.attr( 'data-gmaptitle' );
 			var $gmap_id = $gmap.attr( 'id' );

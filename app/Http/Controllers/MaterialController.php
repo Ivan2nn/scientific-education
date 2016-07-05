@@ -104,6 +104,7 @@ class MaterialController extends Controller
         {
            $input['file'] = $material->file;
            $nameFile = $material->filename;
+           $material->update($input);
         }       
         
         else
@@ -112,15 +113,15 @@ class MaterialController extends Controller
             $destinationPath = 'documents/'. $input['published_at'] .'/';
             $nameFile = $document->getClientOriginalName();
             $uploadSuccess = $document->move($destinationPath, $nameFile);
-            $input['file'] = $destinationPath . $nameFile;   
+            $input['file'] = $destinationPath . $nameFile;  
+            $material->update($input);
+            $material->filetype = $document->getClientOriginalExtension();
+            $material->filesize = $document->getSize();
+            $material->filename = $nameFile;
+            $material->update(); 
         }
-        
-        $material->update($input);
-        $newMaterial->filetype = $document->getClientOriginalExtension();
-        $newMaterial->filesize = $document->getSize();
-        $material->filename = $nameFile;
-        $material->update();
-        return redirect('material');
+    
+        return redirect('admin');
         
     }
 
@@ -132,7 +133,8 @@ class MaterialController extends Controller
      */
     public function destroy($material)
     {
-        //
+        $material->delete();
+        return redirect('admin');
     }
 
     public function getDownload($material) {

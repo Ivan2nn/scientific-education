@@ -14,7 +14,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <div id="k-contact-map" class="clearfix"><!-- map -->
+            <div id="k-contact-map" class="clearfix internal-text"><!-- map -->
                 <div 
                 id="g-map-1" 
                 class="new-map" 
@@ -40,8 +40,8 @@
                 
                 <div class="row">
                 	<div class="col-lg-8 col-md-8 col-sm-12">
-                    	<h6>Segreteria Didattica Master Salute e sicurezza</h6>
-						<p>Tel:  06.5733.7305 | e-mail: <a href="mailto:master.sicurezza@uniroma3.it?subject=Richiesta%20informazioni%20Master%20Salute%20Sicurezza&body=Gentile%20segreteria%20del%20Master:">master.sicurezza@uniroma3.it</a>  </p>
+                    	<h6>Scientific Foundation</h6>
+						<p>Tel:  06.5733.9999 | e-mail: <a href="mailto:test@uniroma3.it?subject=Richiesta%20informazioni%20ScientificFoundation:">test@uniroma3.it</a>  </p>
                         
 						<!--<h6 class="remove-margin-top remove-margin-bottom">Washington Primary School</h6>
 						<p class="small">Tel: 631 552 32 77   |   Fax: 631 552 32 78</p>

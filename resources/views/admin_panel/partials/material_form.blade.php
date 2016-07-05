@@ -18,7 +18,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('published_at', 'Da pubblicare:') !!}
-    {!! Form::input('date', 'published_at', $editMaterial ? null : date('d-m-Y'), ['class' => 'form-control']) !!}  
+    {!! Form::input('date', 'published_at', $editMaterial ? $material->published_at->format('d-m-Y') : date('d-m-Y'), ['class' => 'form-control']) !!}  
     @if ($errors->has('published_at'))
         <span class="help-block">
             <strong>{{ $errors->first('published_at') }}</strong>
@@ -28,9 +28,7 @@
 @if ($editMaterial)
     <div class="form-group">
         {!! Form::label('file_material','Materiale presente',array('class' => 'control-label')) !!}
-        <div class="col-sm-5">
-            {!! Form::label('file_material',$material->filename,array('class' => 'form-control')) !!}
-        </div>
+        {!! Form::label('file_material',$material->filename,array('class' => 'form-control')) !!}
     </div>
 @endif
 <div class="form-group">

@@ -8,9 +8,9 @@ use Carbon\Carbon;
 
 class SiteEvent extends Model
 {
-    protected $fillable = array('title','body','published_at','event_date');
+    protected $fillable = array('title','body','excerpt','published_at','event_date');
 
-    protected $dates = ['event_date'];
+    protected $dates = ['event_date', 'published_at'];
     // We have to follow the convention set+NameOfAttributeCamelCase
 	public function setPublishedAtAttribute($date) 
     {
@@ -21,11 +21,6 @@ class SiteEvent extends Model
     public function setEventDateAttribute($event_date)
     {
         $this->attributes['event_date'] = Carbon::createFromFormat('d-m-Y', $event_date);
-    }
-
-    public function getPublishedAtAttribute()
-    {
-        return date('d-m-Y', strtotime($this->attributes['published_at']));
     }
 
     public function getExcerptAttribute()

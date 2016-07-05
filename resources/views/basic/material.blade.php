@@ -24,17 +24,12 @@
 						<h2 class="page-title pull-right">Pubblicato il: {!! $material->published_at->format('d-M-Y'); !!}</h2>
 					</div>
 				</div>
-				<div class="event-meta">
-					<span class="event-date">{!! $site_event->event_date->day !!} {!! $site_event->event_date->format('M') !!} {!! $site_event->event_date->year !!}</span>
-				</div>
 			</div>
 			<div class="news-body clearfix">
 				<p>
 					{!! $material->description !!}
 				</p>
-				<p>
-					<a href="{{ URL::route('fetch-material', array('day'=>$documents[0]->masterday->day,'filename'=>basename($doc->file))) }}" ><i class="fa fa-download filename"></i>{{{ $material->filename }}}</a>
-				</p>
+				
 			</div>
 		</div>
 	</div>

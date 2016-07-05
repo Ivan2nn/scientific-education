@@ -114,7 +114,7 @@
 					<div class="col-lg-6">
 						<div class="copyright">
 							<p>
-								<span>&copy; Target 2014 All right reserved. By </span><a href="http://webthemez.com" target="_blank">WebThemez</a>
+								<span>&copy; By </span><a href="http://mimiedesign.com" target="_blank">Mimi eDesign</a>
 							</p>
 						</div>
 					</div>
@@ -137,7 +137,9 @@
 	    ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<!-- Google Maps -->
-    
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEE6qHaA76VO-fC8ZOUpjXfAf9UUcRbyQ">
+    </script>
 	<script src="{!! asset('output/final.js') !!}"></script>
 </body>
 </html>

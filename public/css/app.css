@@ -95,8 +95,17 @@ footer ul.link-list li a {
 .bootcards-file .panel-footer {
   background: #F4A55F;
 }
-.bootcards-file .panel-footer .btn-special {
+.bootcards-file .panel-footer .btn-primary {
   background: #F4665F;
+}
+.bootcards-file .panel-footer .row {
+  margin-bottom: 0px;
+}
+.bootcards-file .panel-footer a {
+  color: white;
+}
+.bootcards-file .panel-footer .delete-btn {
+  background-color: #3B8D94;
 }
 .bootcards-file .list-group .list-group-item {
   margin-left: 0px;
@@ -118,6 +127,15 @@ footer ul.link-list li a {
 .event-list li .info ul li {
   padding: 0;
   pointer: default;
+}
+.event-list li .delete-btn {
+  background-color: #3B8D94;
+}
+.event-list li .row {
+  margin-bottom: 0px;
+}
+.event-list li .row a {
+  color: white;
 }
 input[type="text"] {
   border-color: #3B8D94;
